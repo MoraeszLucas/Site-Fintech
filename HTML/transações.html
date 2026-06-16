@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTrack — Transações</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/CSS/carteira-transaçoes.css" />
+</head>
+<body class="min-h-screen flex flex-col md:flex-row">
+
+  <aside class="sidebar hidden md:flex flex-col w-60 px-4 py-6 gap-6 fixed top-0 left-0 h-full z-10">
+    <div class="flex items-center gap-2 px-2 mb-2">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#1E1A3A"/><path d="M7 19L11.5 13L15 16.5L19.5 10" stroke="#7C6FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="9.5" r="1.5" fill="#A598F0"/></svg>
+      <span class="text-base font-bold text-white">Fin<span class="logo-accent">Track</span></span>
+    </div>
+    <nav class="flex flex-col gap-1 flex-1">
+      <p class="section-title px-2">Menu</p>
+      <a href="index.html" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Dashboard
+      </a>
+      <a href="carteira.html" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        Carteira
+      </a>
+      <a href="transacoes.html" class="nav-link active">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+        Transações
+      </a>
+      <a href="#" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+        Cartões
+      </a>
+      <a href="#" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Metas
+      </a>
+      <p class="section-title px-2 mt-4">Conta</p>
+      <a href="#" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Configurações
+      </a>
+    </nav>
+    <div class="flex items-center gap-3 px-2 pt-4 border-t border-[#1E1E30]">
+      <div class="avatar">LM</div>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-600 text-white truncate">Lucas Moraes</p>
+        <p class="text-xs text-[#55556A] truncate">lucas@fintrack.com</p>
+      </div>
+    </div>
+  </aside>
+
+
+  <main class="flex-1 md:ml-60 flex flex-col min-h-screen pb-20 md:pb-0">
+
+    
+    <header class="flex items-center justify-between px-5 py-4 border-b border-[#1E1E30]">
+      <div class="flex items-center gap-2 md:hidden">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#1E1A3A"/><path d="M7 19L11.5 13L15 16.5L19.5 10" stroke="#7C6FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="9.5" r="1.5" fill="#A598F0"/></svg>
+        <span class="text-sm font-bold text-white">Fin<span class="logo-accent">Track</span></span>
+      </div>
+      <div class="hidden md:block">
+        <h1 class="text-sm font-semibold text-white">Transações</h1>
+        <p class="text-xs text-[#55556A]">Histórico completo — Junho 2026</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="chip hidden sm:inline-flex" style="background:#1E1A3A;border-color:#3D3480;color:#A598F0;">
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          Nova transação
+        </button>
+        <button class="relative p-2 rounded-xl bg-[#1E1E30] text-[#888899] hover:text-white transition">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-[#7C6FE0] rounded-full"></span>
+        </button>
+        <div class="avatar">LM</div>
+      </div>
+    </header>
+
+    
+    <div class="flex-1 p-4 md:p-6 flex flex-col gap-5">
+
+    
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="card p-4">
+          <p class="stat-label mb-1">Entradas</p>
+          <p class="text-lg font-bold positive">R$ 5.200</p>
+          <p class="text-xs text-[#55556A] mt-1">2 lançamentos</p>
+        </div>
+        <div class="card p-4">
+          <p class="stat-label mb-1">Saídas</p>
+          <p class="text-lg font-bold negative">R$ 2.147</p>
+          <p class="text-xs text-[#55556A] mt-1">9 lançamentos</p>
+        </div>
+        <div class="card p-4">
+          <p class="stat-label mb-1">Saldo líquido</p>
+          <p class="text-lg font-bold positive">+ R$ 3.053</p>
+          <p class="text-xs text-[#55556A] mt-1">Junho 2026</p>
+        </div>
+        <div class="card p-4">
+          <p class="stat-label mb-1">Total movimentado</p>
+          <p class="text-lg font-bold text-white">R$ 7.347</p>
+          <p class="text-xs text-[#55556A] mt-1">11 transações</p>
+        </div>
+      </div>
+
+     
+      <div class="card p-4">
+        <div class="flex flex-col sm:flex-row gap-3">
+         
+          <div class="flex items-center gap-2 flex-1 bg-[#1A1A28] border border-[#2A2A40] rounded-xl px-3 py-2.5">
+            <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#55556A" stroke-width="2"><circle cx="11" cy="11" r="8"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35"/></svg>
+            <span class="text-sm text-[#55556A]">Buscar transação...</span>
+          </div>
+         
+          <div class="flex gap-2 flex-wrap">
+            <span class="chip" style="background:#1E1A3A;border-color:#3D3480;color:#A598F0;">Todos</span>
+            <span class="chip">Entradas</span>
+            <span class="chip">Saídas</span>
+            <span class="chip">
+              <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"/></svg>
+              Filtrar
+            </span>
+          </div>
+        </div>
+
+        
+        <div class="flex gap-2 mt-3 flex-wrap">
+          <span class="chip" style="background:#162A1E;border-color:#2a4030;color:#4CAF87;">Alimentação</span>
+          <span class="chip" style="background:#1E1A3A;border-color:#3D3480;color:#A598F0;">Transporte</span>
+          <span class="chip" style="background:#2a1622;border-color:#4a2038;color:#D4537E;">Compras</span>
+          <span class="chip" style="background:#162A22;border-color:#2a4036;color:#2E9E75;">Investimento</span>
+          <span class="chip" style="background:#1a2010;border-color:#2e3820;color:#E9A820;">Lazer</span>
+          <span class="chip">+ categorias</span>
+        </div>
+      </div>
+
+      
+      <div class="card p-5">
+
+       
+        <div class="mb-1">
+          <div class="flex items-center justify-between mb-2">
+            <p class="section-title mb-0">15 de junho</p>
+            <span class="text-xs positive font-500">+ R$ 3.200</span>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#162A1E;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#4CAF87" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Salário ZF Automotive</p>
+              <p class="text-xs text-[#55556A]">Entrada · Conta corrente</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 positive">+ R$ 3.200</p>
+              <span class="badge badge-green">Entrada</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#1E1E30] my-3"></div>
+
+        
+        <div class="mb-1">
+          <div class="flex items-center justify-between mb-2">
+            <p class="section-title mb-0">14 de junho</p>
+            <span class="text-xs negative font-500">− R$ 350</span>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#162A1E;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#4CAF87" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Supermercado Extra</p>
+              <p class="text-xs text-[#55556A]">Alimentação · Cartão de crédito</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 negative">− R$ 312</p>
+              <span class="badge" style="background:#1a2520;color:#6fcfa0;">Alimentação</span>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#1E1A3A;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#7C6FE0" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">CPTM / Metrô</p>
+              <p class="text-xs text-[#55556A]">Transporte · Débito automático</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 negative">− R$ 38</p>
+              <span class="badge badge-purple">Transporte</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#1E1E30] my-3"></div>
+
+     
+        <div class="mb-1">
+          <div class="flex items-center justify-between mb-2">
+            <p class="section-title mb-0">12 de junho</p>
+            <span class="text-xs negative font-500">− R$ 379</span>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#2A1620;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#D4537E" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Renner — SBC</p>
+              <p class="text-xs text-[#55556A]">Compras · Cartão de crédito</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 negative">− R$ 189</p>
+              <span class="badge" style="background:#2a1622;color:#D4537E;">Compras</span>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#1a2010;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#E9A820" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Spotify Premium</p>
+              <p class="text-xs text-[#55556A]">Lazer · Débito automático</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 negative">− R$ 21</p>
+              <span class="badge" style="background:#1a2010;color:#E9A820;">Lazer</span>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#1a2010;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#E9A820" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Netflix</p>
+              <p class="text-xs text-[#55556A]">Lazer · Débito automático</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 negative">− R$ 45</p>
+              <span class="badge" style="background:#1a2010;color:#E9A820;">Lazer</span>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#1a2010;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#E9A820" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Gym — Smart Fit</p>
+              <p class="text-xs text-[#55556A]">Saúde · Débito automático</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 negative">− R$ 124</p>
+              <span class="badge" style="background:#1a2010;color:#E9A820;">Saúde</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#1E1E30] my-3"></div>
+
+       
+        <div class="mb-1">
+          <div class="flex items-center justify-between mb-2">
+            <p class="section-title mb-0">11 de junho</p>
+            <span class="text-xs positive font-500">+ R$ 47</span>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#162A22;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#2E9E75" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Rendimento SELIC</p>
+              <p class="text-xs text-[#55556A]">Investimento · Tesouro Direto</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 positive">+ R$ 47</p>
+              <span class="badge badge-green">Investimento</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-[#1E1E30] my-3"></div>
+
+        
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <p class="section-title mb-0">8 de junho</p>
+            <span class="text-xs negative font-500">− R$ 371</span>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#162A1E;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#4CAF87" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Feira / Hortifruti</p>
+              <p class="text-xs text-[#55556A]">Alimentação · Pix</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 negative">− R$ 87</p>
+              <span class="badge" style="background:#1a2520;color:#6fcfa0;">Alimentação</span>
+            </div>
+          </div>
+
+          <div class="tx-row">
+            <div class="tx-icon" style="background:#162A22;">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#2E9E75" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-sm text-white font-500 truncate">Aporte — CDB Nubank</p>
+              <p class="text-xs text-[#55556A]">Investimento · Transferência</p>
+            </div>
+            <div class="text-right flex-shrink-0">
+              <p class="text-sm font-600 negative">− R$ 284</p>
+              <span class="badge badge-green">Investimento</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+      <div class="flex items-center justify-between px-1">
+        <span class="text-xs text-[#55556A]">Mostrando 11 de 38 transações</span>
+        <div class="flex gap-2">
+          <button class="chip opacity-40 cursor-not-allowed">← Anterior</button>
+          <button class="chip" style="background:#1E1A3A;border-color:#3D3480;color:#A598F0;">Próximas →</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  
+  <nav class="mobile-bottom-nav fixed bottom-0 left-0 right-0 grid grid-cols-4 z-20 md:hidden">
+    <a href="index.html" class="mobile-nav-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Início
+    </a>
+    <a href="carteira.html" class="mobile-nav-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      Carteira
+    </a>
+    <a href="transacoes.html" class="mobile-nav-item active">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+      Transações
+    </a>
+    <a href="#" class="mobile-nav-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      Perfil
+    </a>
+  </nav>
+
+</body>
+</html>
