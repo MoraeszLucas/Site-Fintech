@@ -88,6 +88,233 @@
       </div>
     </header>
  
+     <!-- BODY -->
+    <div class="flex-1 p-4 md:p-6 flex flex-col gap-5 overflow-y-auto">
+ 
+      <!-- SALDO + CARDS TOPO -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+ 
+        <!-- Saldo total -->
+        <div class="card-purple p-5 sm:col-span-2 lg:col-span-1">
+          <p class="stat-label mb-1">Saldo disponível</p>
+          <p class="stat-value">R$ 8.340<span class="text-base font-normal text-[#888899]">,00</span></p>
+          <div class="flex items-center gap-2 mt-3">
+            <span class="badge badge-green">▲ +3,2%</span>
+            <span class="text-xs text-[#55556A]">vs. mês anterior</span>
+          </div>
+        </div>
+ 
+        <!-- Entradas -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <p class="stat-label">Entradas</p>
+            <div class="w-8 h-8 rounded-xl bg-[#162A1E] flex items-center justify-center">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#4CAF87" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19V5M5 12l7-7 7 7"/></svg>
+            </div>
+          </div>
+          <p class="text-lg font-bold text-[#4CAF87]">R$ 5.200</p>
+          <p class="text-xs text-[#55556A] mt-1">Junho 2026</p>
+        </div>
+ 
+        <!-- Saídas -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <p class="stat-label">Saídas</p>
+            <div class="w-8 h-8 rounded-xl bg-[#2A1616] flex items-center justify-center">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#E2534A" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </div>
+          </div>
+          <p class="text-lg font-bold text-[#E2534A]">R$ 2.147</p>
+          <p class="text-xs text-[#55556A] mt-1">Junho 2026</p>
+        </div>
+ 
+        <!-- Investimentos -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <p class="stat-label">Patrimônio</p>
+            <div class="w-8 h-8 rounded-xl bg-[#1E1A3A] flex items-center justify-center">
+              <svg width="15" height="15" fill="none" viewBox="0 0 24 24" stroke="#7C6FE0" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            </div>
+          </div>
+          <p class="text-lg font-bold text-white">R$ 14.820</p>
+          <span class="badge badge-purple">+12,3% a.a.</span>
+        </div>
+      </div>
+ 
+      <!-- MEIO: AÇÕES RÁPIDAS + ALOCAÇÃO -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+ 
+        <!-- Ações rápidas -->
+        <div class="card p-5">
+          <p class="section-title">Ações rápidas</p>
+          <div class="grid grid-cols-2 gap-3 mt-1">
+            <button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-[#1E1E30] hover:bg-[#26263A] transition">
+              <div class="w-9 h-9 rounded-xl bg-[#1E1A3A] flex items-center justify-center">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#7C6FE0" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+              </div>
+              <span class="text-xs text-[#AAAACC] font-500">Transferir</span>
+            </button>
+            <button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-[#1E1E30] hover:bg-[#26263A] transition">
+              <div class="w-9 h-9 rounded-xl bg-[#1E1A3A] flex items-center justify-center">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#7C6FE0" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <span class="text-xs text-[#AAAACC] font-500">Pix</span>
+            </button>
+            <button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-[#1E1E30] hover:bg-[#26263A] transition">
+              <div class="w-9 h-9 rounded-xl bg-[#1E1A3A] flex items-center justify-center">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#7C6FE0" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>
+              </div>
+              <span class="text-xs text-[#AAAACC] font-500">Investir</span>
+            </button>
+            <button class="flex flex-col items-center gap-2 p-3 rounded-xl bg-[#1E1E30] hover:bg-[#26263A] transition">
+              <div class="w-9 h-9 rounded-xl bg-[#1E1A3A] flex items-center justify-center">
+                <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#7C6FE0" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+              </div>
+              <span class="text-xs text-[#AAAACC] font-500">Metas</span>
+            </button>
+          </div>
+        </div>
+
+    
+     <div class="card p-5 lg:col-span-2">
+          <div class="flex items-center justify-between mb-4">
+            <p class="section-title mb-0">Alocação da carteira</p>
+            <span class="text-xs text-[#7C6FE0] cursor-pointer hover:underline">Ver detalhes</span>
+          </div>
+ 
+          <!-- Barra -->
+          <div class="flex h-2.5 rounded-full overflow-hidden gap-0.5 mb-4">
+            <div class="progress-fill" style="width:40%;background:#7C6FE0;border-radius:9999px 0 0 9999px;"></div>
+            <div class="progress-fill" style="width:30%;background:#4CAF87;"></div>
+            <div class="progress-fill" style="width:20%;background:#E9A820;"></div>
+            <div class="progress-fill" style="width:10%;background:#E2534A;border-radius:0 9999px 9999px 0;"></div>
+          </div>
+ 
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#1A1A28]">
+              <div class="alloc-dot" style="background:#7C6FE0;"></div>
+              <div>
+                <p class="text-xs font-600 text-white">Renda Fixa</p>
+                <p class="text-xs text-[#55556A]">40% · R$ 5.928</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#1A1A28]">
+              <div class="alloc-dot" style="background:#4CAF87;"></div>
+              <div>
+                <p class="text-xs font-600 text-white">Ações</p>
+                <p class="text-xs text-[#55556A]">30% · R$ 4.446</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#1A1A28]">
+              <div class="alloc-dot" style="background:#E9A820;"></div>
+              <div>
+                <p class="text-xs font-600 text-white">FIIs</p>
+                <p class="text-xs text-[#55556A]">20% · R$ 2.964</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5 p-3 rounded-xl bg-[#1A1A28]">
+              <div class="alloc-dot" style="background:#E2534A;"></div>
+              <div>
+                <p class="text-xs font-600 text-white">Crypto</p>
+                <p class="text-xs text-[#55556A]">10% · R$ 1.482</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+      <!-- BAIXO: TRANSAÇÕES + METAS -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+ 
+        <!-- Transações recentes -->
+        <div class="card p-5 lg:col-span-2">
+          <div class="flex items-center justify-between mb-3">
+            <p class="section-title mb-0">Transações recentes</p>
+            <span class="text-xs text-[#7C6FE0] cursor-pointer hover:underline">Ver todas</span>
+          </div>
+ 
+          <div class="overflow-x-auto -mx-1">
+            <table>
+              <thead>
+                <tr>
+                  <th>Descrição</th>
+                  <th class="hidden sm:table-cell">Categoria</th>
+                  <th class="hidden sm:table-cell">Data</th>
+                  <th class="text-right">Valor</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="tx-icon" style="background:#162A1E;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#4CAF87" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                      </div>
+                      <span>Salário ZF Automotive</span>
+                    </div>
+                  </td>
+                  <td class="hidden sm:table-cell"><span class="badge badge-green">Entrada</span></td>
+                  <td class="hidden sm:table-cell text-[#55556A]">15/06/2026</td>
+                  <td class="text-right positive font-600">+ R$ 3.200</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="tx-icon" style="background:#162A1E;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#4CAF87" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+                      </div>
+                      <span>Supermercado Extra</span>
+                    </div>
+                  </td>
+                  <td class="hidden sm:table-cell"><span class="badge" style="background:#1a2520;color:#6fcfa0;">Alimentação</span></td>
+                  <td class="hidden sm:table-cell text-[#55556A]">14/06/2026</td>
+                  <td class="text-right negative font-600">− R$ 312</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="tx-icon" style="background:#1E1A3A;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#7C6FE0" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+                      </div>
+                      <span>CPTM / Metrô</span>
+                    </div>
+                  </td>
+                  <td class="hidden sm:table-cell"><span class="badge badge-purple">Transporte</span></td>
+                  <td class="hidden sm:table-cell text-[#55556A]">14/06/2026</td>
+                  <td class="text-right negative font-600">− R$ 38</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="tx-icon" style="background:#2A1620;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#D4537E" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                      </div>
+                      <span>Renner SBC</span>
+                    </div>
+                  </td>
+                  <td class="hidden sm:table-cell"><span class="badge" style="background:#2a1622;color:#D4537E;">Compras</span></td>
+                  <td class="hidden sm:table-cell text-[#55556A]">12/06/2026</td>
+                  <td class="text-right negative font-600">− R$ 189</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="flex items-center gap-2.5">
+                      <div class="tx-icon" style="background:#162A22;">
+                        <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="#2E9E75" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                      </div>
+                      <span>Rendimento SELIC</span>
+                    </div>
+                  </td>
+                  <td class="hidden sm:table-cell"><span class="badge badge-green">Investimento</span></td>
+                  <td class="hidden sm:table-cell text-[#55556A]">11/06/2026</td>
+                  <td class="text-right positive font-600">+ R$ 47</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+    
     
 
 
