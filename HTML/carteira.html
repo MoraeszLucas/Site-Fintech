@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FinTrack — Carteira</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen flex flex-col md:flex-row">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar hidden md:flex flex-col w-60 px-4 py-6 gap-6 fixed top-0 left-0 h-full z-10">
+    <div class="flex items-center gap-2 px-2 mb-2">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#1E1A3A"/><path d="M7 19L11.5 13L15 16.5L19.5 10" stroke="#7C6FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="9.5" r="1.5" fill="#A598F0"/></svg>
+      <span class="text-base font-bold text-white">Fin<span class="logo-accent">Track</span></span>
+    </div>
+    <nav class="flex flex-col gap-1 flex-1">
+      <p class="section-title px-2">Menu</p>
+      <a href="index.html" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+        Dashboard
+      </a>
+      <a href="carteira.html" class="nav-link active">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        Carteira
+      </a>
+      <a href="transacoes.html" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+        Transações
+      </a>
+      <a href="#" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+        Cartões
+      </a>
+      <a href="#" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+        Metas
+      </a>
+      <p class="section-title px-2 mt-4">Conta</p>
+      <a href="#" class="nav-link">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Configurações
+      </a>
+    </nav>
+    <div class="flex items-center gap-3 px-2 pt-4 border-t border-[#1E1E30]">
+      <div class="avatar">LM</div>
+      <div class="flex-1 min-w-0">
+        <p class="text-xs font-600 text-white truncate">Lucas Moraes</p>
+        <p class="text-xs text-[#55556A] truncate">lucas@fintrack.com</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 md:ml-60 flex flex-col min-h-screen pb-20 md:pb-0">
+
+    <!-- TOP BAR -->
+    <header class="flex items-center justify-between px-5 py-4 border-b border-[#1E1E30]">
+      <div class="flex items-center gap-2 md:hidden">
+        <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#1E1A3A"/><path d="M7 19L11.5 13L15 16.5L19.5 10" stroke="#7C6FE0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="9.5" r="1.5" fill="#A598F0"/></svg>
+        <span class="text-sm font-bold text-white">Fin<span class="logo-accent">Track</span></span>
+      </div>
+      <div class="hidden md:block">
+        <h1 class="text-sm font-semibold text-white">Carteira</h1>
+        <p class="text-xs text-[#55556A]">Patrimônio investido — Junho 2026</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <button class="chip hidden sm:inline-flex" style="background:#1E1A3A;border-color:#3D3480;color:#A598F0;">
+          <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          Novo ativo
+        </button>
+        <button class="relative p-2 rounded-xl bg-[#1E1E30] text-[#888899] hover:text-white transition">
+          <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+          <span class="absolute top-1.5 right-1.5 w-1.5 h-1.5 bg-[#7C6FE0] rounded-full"></span>
+        </button>
+        <div class="avatar">LM</div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <div class="flex-1 p-4 md:p-6 flex flex-col gap-5">
+
+      <!-- RESUMO TOPO -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="card-purple p-5 sm:col-span-1">
+          <p class="stat-label mb-1">Total investido</p>
+          <p class="stat-value">R$ 14.820</p>
+          <div class="flex items-center gap-2 mt-3">
+            <span class="badge badge-green">▲ +12,3%</span>
+            <span class="text-xs text-[#55556A]">rentabilidade a.a.</span>
+          </div>
+        </div>
+        <div class="card p-5">
+          <p class="stat-label mb-2">Rendimento acumulado</p>
+          <p class="text-xl font-bold positive">+ R$ 1.632</p>
+          <p class="text-xs text-[#55556A] mt-1">Desde o início da carteira</p>
+        </div>
+        <div class="card p-5">
+          <p class="stat-label mb-2">Rendimento no mês</p>
+          <p class="text-xl font-bold positive">+ R$ 214</p>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="badge badge-green">▲ +1,4%</span>
+            <span class="text-xs text-[#55556A]">Junho 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALOCAÇÃO + DESEMPENHO -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+
+        <!-- Alocação por classe -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-4">
+            <p class="section-title mb-0">Alocação por classe</p>
+          </div>
+          <div class="flex h-3 rounded-full overflow-hidden gap-0.5 mb-5">
+            <div style="width:40%;background:#7C6FE0;border-radius:9999px 0 0 9999px;"></div>
+            <div style="width:30%;background:#4CAF87;"></div>
+            <div style="width:20%;background:#E9A820;"></div>
+            <div style="width:10%;background:#E2534A;border-radius:0 9999px 9999px 0;"></div>
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between p-3 rounded-xl bg-[#1A1A28]">
+              <div class="flex items-center gap-3">
+                <div class="alloc-dot" style="background:#7C6FE0;width:10px;height:10px;"></div>
+                <div>
+                  <p class="text-sm font-500 text-white">Renda Fixa</p>
+                  <p class="text-xs text-[#55556A]">CDB, Tesouro, LCI</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-sm font-600 text-white">R$ 5.928</p>
+                <p class="text-xs text-[#55556A]">40%</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-[#1A1A28]">
+              <div class="flex items-center gap-3">
+                <div class="alloc-dot" style="background:#4CAF87;width:10px;height:10px;"></div>
+                <div>
+                  <p class="text-sm font-500 text-white">Ações</p>
+                  <p class="text-xs text-[#55556A]">B3 — Bolsa de Valores</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-sm font-600 text-white">R$ 4.446</p>
+                <p class="text-xs text-[#55556A]">30%</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-[#1A1A28]">
+              <div class="flex items-center gap-3">
+                <div class="alloc-dot" style="background:#E9A820;width:10px;height:10px;"></div>
+                <div>
+                  <p class="text-sm font-500 text-white">FIIs</p>
+                  <p class="text-xs text-[#55556A]">Fundos Imobiliários</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-sm font-600 text-white">R$ 2.964</p>
+                <p class="text-xs text-[#55556A]">20%</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-xl bg-[#1A1A28]">
+              <div class="flex items-center gap-3">
+                <div class="alloc-dot" style="background:#E2534A;width:10px;height:10px;"></div>
+                <div>
+                  <p class="text-sm font-500 text-white">Crypto</p>
+                  <p class="text-xs text-[#55556A]">Bitcoin, ETH</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="text-sm font-600 text-white">R$ 1.482</p>
+                <p class="text-xs text-[#55556A]">10%</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Evolução mensal (barras visuais) -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-4">
+            <p class="section-title mb-0">Evolução do patrimônio</p>
+            <span class="badge badge-green">2026</span>
+          </div>
+          <div class="flex items-end gap-2 h-36 mt-2">
+            <div class="flex flex-col items-center gap-1 flex-1">
+              <div class="w-full rounded-t-md" style="height:52%;background:#1E1A3A;"></div>
+              <span class="text-xs text-[#55556A]">Jan</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 flex-1">
+              <div class="w-full rounded-t-md" style="height:58%;background:#1E1A3A;"></div>
+              <span class="text-xs text-[#55556A]">Fev</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 flex-1">
+              <div class="w-full rounded-t-md" style="height:63%;background:#1E1A3A;"></div>
+              <span class="text-xs text-[#55556A]">Mar</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 flex-1">
+              <div class="w-full rounded-t-md" style="height:70%;background:#1E1A3A;"></div>
+              <span class="text-xs text-[#55556A]">Abr</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 flex-1">
+              <div class="w-full rounded-t-md" style="height:78%;background:#1E1A3A;"></div>
+              <span class="text-xs text-[#55556A]">Mai</span>
+            </div>
+            <div class="flex flex-col items-center gap-1 flex-1">
+              <div class="w-full rounded-t-md" style="height:100%;background:#7C6FE0;"></div>
+              <span class="text-xs" style="color:#A598F0;">Jun</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between mt-4 pt-3 border-t border-[#1E1E30]">
+            <div>
+              <p class="text-xs text-[#55556A]">Jan 2026</p>
+              <p class="text-sm font-600 text-white">R$ 10.380</p>
+            </div>
+            <svg width="40" height="12" viewBox="0 0 40 12" fill="none"><path d="M0 10 Q20 2 40 1" stroke="#7C6FE0" stroke-width="1.5" fill="none" stroke-dasharray="4 2"/></svg>
+            <div class="text-right">
+              <p class="text-xs text-[#55556A]">Jun 2026</p>
+              <p class="text-sm font-600 positive">R$ 14.820</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABELA DE ATIVOS -->
+      <div class="card p-5">
+        <div class="flex items-center justify-between mb-4">
+          <p class="section-title mb-0">Meus ativos</p>
+          <div class="flex gap-2">
+            <span class="chip text-xs">5 ativos</span>
+          </div>
+        </div>
+        <div class="overflow-x-auto -mx-1">
+          <table>
+            <thead>
+              <tr>
+                <th>Ativo</th>
+                <th class="hidden sm:table-cell">Tipo</th>
+                <th class="hidden md:table-cell">Quantidade</th>
+                <th class="hidden md:table-cell">Preço médio</th>
+                <th>Valor atual</th>
+                <th class="text-right">Variação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-2.5">
+                    <div class="tx-icon" style="background:#1E1A3A;color:#A598F0;font-size:10px;font-weight:600;">CDB</div>
+                    <div>
+                      <p class="text-sm text-white font-500">CDB Nubank 120% CDI</p>
+                      <p class="text-xs text-[#55556A] hidden sm:block">Nubank</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden sm:table-cell"><span class="badge badge-purple">Renda Fixa</span></td>
+                <td class="hidden md:table-cell text-[#888899]">—</td>
+                <td class="hidden md:table-cell text-[#888899]">—</td>
+                <td class="text-white font-500">R$ 5.920</td>
+                <td class="text-right"><span class="badge badge-green">▲ +11,2%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-2.5">
+                    <div class="tx-icon" style="background:#162A1E;color:#4CAF87;font-size:10px;font-weight:600;">PETR</div>
+                    <div>
+                      <p class="text-sm text-white font-500">Petrobras PN</p>
+                      <p class="text-xs text-[#55556A] hidden sm:block">PETR4</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden sm:table-cell"><span class="badge" style="background:#162A1E;color:#4CAF87;">Ação</span></td>
+                <td class="hidden md:table-cell text-[#888899]">20 cotas</td>
+                <td class="hidden md:table-cell text-[#888899]">R$ 115,00</td>
+                <td class="text-white font-500">R$ 2.740</td>
+                <td class="text-right"><span class="badge badge-green">▲ +18,7%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-2.5">
+                    <div class="tx-icon" style="background:#2a2010;color:#E9A820;font-size:10px;font-weight:600;">VALE</div>
+                    <div>
+                      <p class="text-sm text-white font-500">Vale S.A.</p>
+                      <p class="text-xs text-[#55556A] hidden sm:block">VALE3</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden sm:table-cell"><span class="badge" style="background:#162A1E;color:#4CAF87;">Ação</span></td>
+                <td class="hidden md:table-cell text-[#888899]">15 cotas</td>
+                <td class="hidden md:table-cell text-[#888899]">R$ 112,00</td>
+                <td class="text-white font-500">R$ 1.706</td>
+                <td class="text-right"><span class="badge badge-red">▼ −2,1%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-2.5">
+                    <div class="tx-icon" style="background:#1E2A1A;color:#E9A820;font-size:10px;font-weight:600;">FII</div>
+                    <div>
+                      <p class="text-sm text-white font-500">Maxi Renda</p>
+                      <p class="text-xs text-[#55556A] hidden sm:block">MXRF11</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden sm:table-cell"><span class="badge" style="background:#2a2010;color:#E9A820;">FII</span></td>
+                <td class="hidden md:table-cell text-[#888899]">35 cotas</td>
+                <td class="hidden md:table-cell text-[#888899]">R$ 52,80</td>
+                <td class="text-white font-500">R$ 1.960</td>
+                <td class="text-right"><span class="badge badge-green">▲ +4,1%</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="flex items-center gap-2.5">
+                    <div class="tx-icon" style="background:#2A1616;color:#E2534A;font-size:10px;font-weight:600;">BTC</div>
+                    <div>
+                      <p class="text-sm text-white font-500">Bitcoin</p>
+                      <p class="text-xs text-[#55556A] hidden sm:block">0,0042 BTC</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="hidden sm:table-cell"><span class="badge badge-red">Crypto</span></td>
+                <td class="hidden md:table-cell text-[#888899]">0,0042 BTC</td>
+                <td class="hidden md:table-cell text-[#888899]">R$ 384.000</td>
+                <td class="text-white font-500">R$ 1.480</td>
+                <td class="text-right"><span class="badge badge-red">▼ −3,2%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- MOBILE BOTTOM NAV -->
+  <nav class="mobile-bottom-nav fixed bottom-0 left-0 right-0 grid grid-cols-4 z-20 md:hidden">
+    <a href="index.html" class="mobile-nav-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Início
+    </a>
+    <a href="carteira.html" class="mobile-nav-item active">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      Carteira
+    </a>
+    <a href="transacoes.html" class="mobile-nav-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+      Transações
+    </a>
+    <a href="#" class="mobile-nav-item">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+      Perfil
+    </a>
+  </nav>
+
+</body>
+</html>
